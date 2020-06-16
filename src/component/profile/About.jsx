@@ -1,49 +1,62 @@
 import React from 'react';
 import styled from "styled-components";
-import About_major from './About_major';
+import AboutMajor from './AboutMajor';
 
-
+import { store } from "./store/store";
 
 function About(props) {
-  console.log('aboutData', props.aboutData);
-  const { title, description } = props.aboutData;
+
+  // console.log('aboutData', props.aboutData);
+  const { title, description, major } = props.aboutData;
+
+  //store
+
+  const store = createStore(reducer);
+  console.log("store===>", store.getState());
+
+  const listener = () => {
+    const state = store.getState();
+    console.log(state);
+  };
+
+  const unsubscribe = store.subscribe(listener);
 
   return (
-    <sectionAbout id="about" class="section section__container">
 
-      <h1 class="about__title">{title}</h1>
+    < SectionAbout id="about" className="section section__container" >
+      <h1 className="about__title">{title}</h1>
       <p>{description}</p>
-      <About_major></About_major>
-      <div class="about__jobs">
-        <div class="job">
-          {/* <img src={fitpet} alt="fitpet__logo" class="job__logo" /> */}
-          <div class="job__description">
-            <p class="job__name">핏펫</p>
-            <p class="job__period">2020.01 ~ 현재</p>
+      <AboutMajor majorData={major}></AboutMajor>
+      <div className="about__jobs">
+        <div className="job">
+          {/* <img src={fitpet} alt="fitpet__logo" className="job__logo" /> */}
+          <div className="job__description">
+            <p className="job__name">핏펫</p>
+            <p className="job__period">2020.01 ~ 현재</p>
           </div>
         </div>
-        <div class="job">
-          {/* <img src={mbi} alt="mbi__logo" class="job__logo" /> */}
-          <div class="job__description">
-            <p class="job__name">MBI솔루션</p>
-            <p class="job__period">2018.8 ~ 2020.01</p>
+        <div className="job">
+          {/* <img src={mbi} alt="mbi__logo" className="job__logo" /> */}
+          <div className="job__description">
+            <p className="job__name">MBI솔루션</p>
+            <p className="job__period">2018.8 ~ 2020.01</p>
           </div>
         </div>
-        <div class="job">
-          {/* <img src={iwt} alt="iwt__logo" class="job__logo" /> */}
-          <div class="job__description">
-            <p class="job__name">아이원 트래블</p>
-            <p class="job__period">2016.11 ~ 2018.01</p>
+        <div className="job">
+          {/* <img src={iwt} alt="iwt__logo" className="job__logo" /> */}
+          <div className="job__description">
+            <p className="job__name">아이원 트래블</p>
+            <p className="job__period">2016.11 ~ 2018.01</p>
           </div>
         </div>
       </div>
-    </sectionAbout>
+    </SectionAbout >
   );
 }
 
-const sectionAbout = styled.section`
+const SectionAbout = styled.section`
   border : 1px solid black;
-  background-color : black;
+  /* background-color : black; */
 `;
 
 export default About;
