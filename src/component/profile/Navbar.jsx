@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-
-
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -15,8 +13,13 @@ function Navbar() {
         </div>
         <div className="navbar__menu">
           <ul className="navbar__menu--list">
-            <li className="navbar__menu--list active">About Me</li>
-            <li className="navbar__menu--list">Go to blog</li>
+            <li className="navbar__menu--list active">
+              <Link to="/">About Me</Link>
+            </li>
+            <li className="navbar__menu--list">
+              <Link to="/blog">Go to blog</Link>
+            </li>
+
           </ul>
         </div>
         <button className="navbar__toggle--btn">Button

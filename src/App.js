@@ -22,7 +22,13 @@ import { store } from "./store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { profileDataReducer, getProfileData } from "./store/store";
 
-//useeffect
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 
@@ -59,8 +65,8 @@ function App() {
 
   return (
     <>
-      <GlobalStyle />
 
+      <GlobalStyle />
       <button onClick={() => {
 
         console.log(data);
@@ -78,27 +84,45 @@ function App() {
       }}
       >Mix Data</button>
 
-
-
-      <Navbar></Navbar>
-      {/* {JSON.stringify(storeData.homeData)} */}
-
-      <main>
-        <section id="portfolio">
-          <Home></Home>
-          <About></About>
-          <Work></Work>
-          <Testimonials ></Testimonials>
-          <Contact></Contact>
-          <Card></Card>
-          <CardList></CardList>
-          <Write></Write>
-        </section >
-      </main>
+      <Router><Navbar></Navbar>
+        <main>
+          <section id="portfolio">
+            <Switch>
+              <Route path="/" exact={true}>
+                <AboutMe />
+              </Route>
+              <Route path="/blog">
+                <GoToBlog />
+              </Route>
+            </Switch>
+          </section >
+        </main>
+      </Router>
     </>
   );
 }
 
+function AboutMe() {
+  return (
+    <>
+      <Home></Home>
+      <About></About>
+      <Work></Work>
+      <Testimonials ></Testimonials>
+      <Contact></Contact>
+    </>
+  )
+
+}
+function GoToBlog() {
+  return (
+    <>
+      <Card></Card>
+      <CardList></CardList>
+      <Write></Write>
+    </>
+  )
+}
 
 
 export default App;
