@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Card() {
+export function Card() {
   return (
     <></>
   )

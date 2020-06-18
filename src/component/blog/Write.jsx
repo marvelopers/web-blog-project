@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Write() {
+export function Write() {
   return (
     <></>
   )

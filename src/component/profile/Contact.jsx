@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 
 
-function Contact() {
+export function Contact() {
   return (
     <SectionAbout id="contact" className="section">
       <h1 className="contact__title">contact</h1>

@@ -21,7 +21,7 @@ import { store } from "./store/store";
 
 import { useDispatch, useSelector } from "react-redux";
 import { profileDataReducer, getProfileData } from "./store/store";
-
+import { RouteContainer } from "./route";
 
 import {
   BrowserRouter as Router,
@@ -30,6 +30,7 @@ import {
   Link
 } from "react-router-dom";
 
+import { routes } from "./route";
 
 
 /////////////////////////
@@ -61,8 +62,6 @@ function App() {
 
   const data = JSON.stringify(storeData.homeData);
 
-  console.log(data);
-
   return (
     <>
 
@@ -87,14 +86,7 @@ function App() {
       <Router><Navbar></Navbar>
         <main>
           <section id="portfolio">
-            <Switch>
-              <Route path="/" exact={true}>
-                <AboutMe />
-              </Route>
-              <Route path="/blog">
-                <GoToBlog />
-              </Route>
-            </Switch>
+            <RouteContainer></RouteContainer>
           </section >
         </main>
       </Router>
@@ -102,27 +94,27 @@ function App() {
   );
 }
 
-function AboutMe() {
-  return (
-    <>
-      <Home></Home>
-      <About></About>
-      <Work></Work>
-      <Testimonials ></Testimonials>
-      <Contact></Contact>
-    </>
-  )
+// function AboutMe() {
+//   return (
+//     <>
+//       <Home></Home>
+//       <About></About>
+//       <Work></Work>
+//       <Testimonials ></Testimonials>
+//       <Contact></Contact>
+//     </>
+//   )
 
-}
-function GoToBlog() {
-  return (
-    <>
-      <Card></Card>
-      <CardList></CardList>
-      <Write></Write>
-    </>
-  )
-}
+// }
+// function GoToBlog() {
+//   return (
+//     <>
+//       <Card></Card>
+//       <CardList></CardList>
+//       <Write></Write>
+//     </>
+//   )
+// }
 
 
 export default App;
