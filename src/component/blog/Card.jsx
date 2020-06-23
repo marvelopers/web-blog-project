@@ -10,23 +10,9 @@ export function Card() {
   const cardData = storeData.card;
 
 
-  useEffect(() => { console.log("storeData", storeData) }, []);
+  useEffect(() => { }, []);
 
   const getImagePath = (tag) => {
-
-    // IF절을 통한 imagePath return 
-    // let imagePath = ""
-    // if (tag === "front") {
-    //   imagePath = "/imgs/js.png"
-    // } else if (tag == "back") {
-    //   imagePath = "/imgs/java.png"
-    // } else if (tag == "marketing") {
-    //   imagePath = "/imgs/mkt.png"
-    // } else if (tag == "thought") {
-    //   imagePath = "/imgs/th.png"
-    // }
-    // console.log('getImagePath', imagePath);
-    // return imagePath;
 
     switch (tag) {
       case "front": return "/imgs/js.png";

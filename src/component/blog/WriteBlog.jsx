@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from "styled-components";
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, withRouter } from 'react-router-dom';
 import { useState } from 'react';
-// import CardList from './cardList';
 
 
 //match update 
-export function WriteBlog(match) {
+export function WriteBlog({ match }) {
 
   //write&update card
   const cards = useSelector(state => state.blogDataReducer.card);
@@ -50,7 +49,7 @@ export function WriteBlog(match) {
           tag: blog.tag,
           title: blog.title,
           content: blog.content,
-          author: blog.author,
+          author: blog.author
         }
       })
     }
@@ -59,9 +58,6 @@ export function WriteBlog(match) {
     Object.keys(blog).forEach((key) => {
       //if (!blog[key]) alert(`${key}가 미입력 되었습니다`);
     })
-
-
-
 
     history.push('/blog');
   };
@@ -139,7 +135,6 @@ export function WriteBlog(match) {
                 type="text"
                 className="write__author--input"
                 maxlength="5"
-                autocomplete
                 value={blog.author}
                 onChange={hanbleChangeAuthor}
               /></label>

@@ -12,7 +12,7 @@ export function Home(props) {
 
   return (
     <StyledHomeSection id="Home">
-      <div className="home__container">
+      <DivHome className="home__container">
         <img src="" alt="김서현" className="home__avatar" />
         <h1 className="home__title">
           {storeData.homeData.title}<br />
@@ -23,7 +23,7 @@ export function Home(props) {
         <h3 className="home__description">
           {storeData.homeData.description}
         </h3>
-      </div>
+      </DivHome>
     </StyledHomeSection>
   )
 }

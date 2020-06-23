@@ -169,9 +169,10 @@ export function blogDataReducer(state = blogData, action) {
     case "UPDATE_POST":
       const index = state.card.findIndex(card => card.id === action.payload.id);
       const cards = state.card;
+      cards[index] = action.payload;
       return {
         ...state,
-        card: [...state.card, newCard],
+        card: [...state.card, newCard]
       }
     default:
       return state;

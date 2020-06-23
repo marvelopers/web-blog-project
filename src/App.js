@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import React, { useEffect } from 'react';
+import { createGlobalStyle } from 'styled-components';
 
 //profile
 import Navbar from './component/profile/Navbar';
 
-import { useDispatch, useSelector } from "react-redux";
-import { profileDataReducer, getProfileData } from "./store/store";
+import { useSelector } from "react-redux";
+// import { getProfileData } from "./store/store";
 import { RouteContainer } from "./route";
 
 import {
   BrowserRouter as Router,
 } from "react-router-dom";
 
-import { store, getModalStatusData } from "./store/store";
+import { getModalStatusData } from "./store/store";
 import { CardModal } from "./component/blog";
 
 /////////////////////////
@@ -36,15 +36,12 @@ const GlobalStyle = createGlobalStyle`
 function App() {
 
   //Redux_Store
-  const dispatch = useDispatch();
-  const storeData = useSelector(getProfileData);
+  // const storeData = useSelector(getProfileData);
   const modalStatusData = useSelector(getModalStatusData);
 
-  useEffect(() => {
-    console.log('modalStatusData', modalStatusData);
-  }, []);
+  useEffect(() => { }, []);
 
-  const data = JSON.stringify(storeData.homeData);
+  // const data = JSON.stringify(storeData.homeData);
 
   return (
     //하나의 객체만 return 한다.

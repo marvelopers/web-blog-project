@@ -1,11 +1,10 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import { routes } from "./route";
+import { WriteBlog } from "../component/blog";
 
 export const RouteContainer = () => {
   return (
@@ -17,6 +16,7 @@ export const RouteContainer = () => {
           </Route>
         )
       })}
+      <Route exact path={'/update/:id'} component={WriteBlog} />
     </Switch>
   )
 }
