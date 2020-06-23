@@ -172,7 +172,7 @@ export function blogDataReducer(state = blogData, action) {
       cards[index] = action.payload;
       return {
         ...state,
-        card: [...state.card, newCard]
+        card: cards
       }
     default:
       return state;
