@@ -12,7 +12,7 @@ export const RouteContainer = () => {
     <Switch>
       {routes.map(r => {
         return (
-          <Route path={r.path} exact={r.exact}>
+          <Route key={r.index} path={r.path} exact={r.exact}>
             {r.component}
           </Route>
         )
