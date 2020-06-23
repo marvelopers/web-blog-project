@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { useSelector } from "react-redux";
 import { getProfileData } from "../../store/store";
 
-
 export function Testimonials(props) {
 
   const storeData = useSelector(getProfileData);
