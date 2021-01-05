@@ -66,8 +66,9 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   swSrc: resolveModule(resolveApp, 'src/service-worker'),
   publicUrlOrPath,
+  // ssr을 위한 설정
+  ssrIndexJs: resolveApp('src/index.server.js'),
+  ssrBuild: resolveApp('dist')
 };
-
-
 
 module.exports.moduleFileExtensions = moduleFileExtensions;

@@ -10,3 +10,7 @@
 
  서버사이드 렌더링을 구현하기 위해서는 웹팩 설정을 커스터마이징 해야 함.
  react-router-dom@5.2.0
+
+ yarn add webpack-node-externals
+
+ npm install --save-dev @babel/plugin-syntax-jsx
