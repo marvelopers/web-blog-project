@@ -40,13 +40,14 @@ module.exports = {
               customize: require.resolve(
                 'babel-preset-react-app/webpack-overrides'
               ),
+              presets: ['babel-preset-react-app'],
               plugins: [
                 [
                   require.resolve('babel-plugin-named-asset-import'),
                   {
                     loaderMap: {
                       svg: {
-                        ReactComponent: '@svgr/webpack?-svgo![path]'
+                        ReactComponent: '@svgr/webpack?-svgo![path],+titleProp,+ref![path]'
                       }
                     }
                   }
