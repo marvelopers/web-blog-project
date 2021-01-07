@@ -1,6 +1,7 @@
 This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 ## styled-components 적용
+
 yarn add styled-components && yarn add -D babel-plugin-styled-components
 
 ```
@@ -48,16 +49,18 @@ export default class MyDocument extends Document {
 [next-js-handbook ](https://www.freecodecamp.org/news/the-next-js-handbook/#next-js-vs-gatsby-vs-create-react-app)
 [nextjs 설정 방법 ](https://medium.com/@qsx314/3-next-js-styled-components-36ef818438d9)
 
-
 CRA는 SSR를 도와주지 못한다. SEO와 SPEED는 next와 gastby로 가능하다.
 
 언제 넥스트가 개츠비보다 좋으낙?
 둘다 SSR이 가능한 방법이다,
 
-서버 없는 정적 사이트 렌더링은 개츠비를, 넥스튼느 제공한다 다이나믹 웹사이트를 가능하도록 서버에게 요청한다. 플랫폼에 디플로이 하기를 원한다면 노드 js를 통해서 
+서버 없는 정적 사이트 렌더링은 개츠비를, 넥스튼느 제공한다 다이나믹 웹사이트를 가능하도록 서버에게 요청한다. 플랫폼에 디플로이 하기를 원한다면 노드 js를 통해서
 
 넥스트 역시 정적 사이트가 맞다. 개츠비는 그래프 큐엘을 기반으로 하고 있다.
 
 넥스트의 장점
-1. 빠른 사이트 2. SEO  3. SNS Meta tag 
 
+1. 빠른 사이트 2. SEO 3. SNS Meta tag
+
+브라우저 캐싱을 최대로 활용하기 위해서는 파일의 내용이 변경되면 경로도 변경되는 것이 좋다,
+file-loader
