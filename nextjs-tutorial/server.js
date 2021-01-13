@@ -10,7 +10,8 @@ app.prepare().then(()=>{
   const server = express();
 
   server.get('/page/:id', (req, res) => {
-    res.redirect(`/page${params.id}`);
+    // res.redirect(`/page/${params.id}`);
+    app.render(req, res,'/page',{id: req.params.id})
   });
 
   server.get('*', (req, res)=>{
